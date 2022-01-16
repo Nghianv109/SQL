@@ -42,7 +42,6 @@ WITH sum_of_order as (
     or total_order_sales < lower_whisker THEN 'Outlier' 
     ELSE 'Expected' 
     END as Outlier_status
-    
     FROM sum_of_order as spo
     LEFT JOIN upper_lower_whisker as ul
     ON spo.month_year = ul.month_year
